@@ -1,0 +1,12 @@
+asgiref==3.5.2
+backports.zoneinfo==0.2.1
+Django==4.0.6
+djangorestframework==3.13.1
+importlib-resources==5.9.0
+iso3166==2.1.1
+pycountry==22.3.5
+pytz==2022.1
+schwifty==2022.7.0
+sqlparse==0.4.2
+tzdata==2022.1
+zipp==3.8.1
