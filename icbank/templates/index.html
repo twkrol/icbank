@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>IC Bank - Tomasz Król</title>
+    </head>
+    <body>
+        <h1>Jak korzystać z przykładowej aplikacji symulatora bankowego:</h1>
+        <strong>Aplikacja działa po REST API</strong>
+        <p>Endpointy:
+            <ul>
+                <li>
+                    Wyślij POSTem content JSONa z właściwością 'owner' na adres /api/accounts/create aby utworzyć nowy rachunek, np.:<br>
+                    url: <a href="/api/accounts/create">{{request.build_absolute_uri}}api/accounts/create</a><br>
+                    content: {"owner":"John Kowalsky"}
+                    
+                </li>
+                <br>
+                <li>
+                    Wyślij POSTem content JSONa z właściwością 'account' na adres /api/accounts/balance aby otrzymać informację o stanie rachunku, np.:<br>
+                    url: <a href="/api/accounts/balance">{{request.build_absolute_uri}}api/accounts/balance</a><br>
+                    content: {"number": "PL81100010014322624589612440"}
+                    
+                </li>
+                <br>
+                <li>
+                    Wyślij POSTem content JSONa z właściwościami 'number_debited', 'number_credited', 'amount' na adres /api/accounts/transfer aby przenieść środki z rachunku 'number_debited' na rachunek 'number_credited', np.:<br>
+                    url: <a href="/api/accounts/transfer">{{request.build_absolute_uri}}api/accounts/transfer</a><br>
+                    content: {
+                        "number_debited":"PL81100010014322624589612440",
+                        "number_credited":"PL54100010016371142857958553",
+                        "amount":"50"
+                    }
+                </li>
+                <br>
+                <li>
+                    Wyślij POSTem content JSONa z właściwością 'number' na adres /api/accounts/history aby otrzymać historię operacji na rachunku, np.:<br>
+                    url: <a href="/api/accounts/history">{{request.build_absolute_uri}}api/accounts/history</a><br>
+                    content: {"number": "PL81100010014322624589612440"}
+                    
+                </li>
+            </ul>
+        </p>
+        <h2>Uwagi</h2>
+        <p>
+            Ze względu na demonstracyjny charakter pomijana jest autoryzacja, kontekst właściciela, wartości są tylko całkowite, brak podwójnego księgowania, etc
+        </p>
+    </body>
+</html>
