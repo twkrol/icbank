@@ -1,6 +1,6 @@
 asgiref==3.5.2
 backports.zoneinfo==0.2.1
-Django==4.0.6
+Django==4.1.7
 djangorestframework==3.13.1
 importlib-resources==5.9.0
 iso3166==2.1.1
